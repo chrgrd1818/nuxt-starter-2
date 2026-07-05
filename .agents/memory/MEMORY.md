@@ -1,1 +1,2 @@
 - [Bootstrapping Nuxt as a Replit artifact](nuxt-artifact-bootstrap.md) — Nuxt isn't a native artifactType; workaround + SSR service config + routing gotchas.
+- [Nuxt shared auth/session state](nuxt-shared-auth-state.md) — layout components (header) don't refetch on navigation; use a shared useFetch key + refreshNuxtData after login/logout.

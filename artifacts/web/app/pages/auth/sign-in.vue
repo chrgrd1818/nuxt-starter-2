@@ -24,7 +24,8 @@ async function handleSubmit(): Promise<void> {
       method: "POST",
       body: credentials,
     });
-    await navigateTo("/");
+    await refreshAuthUser();
+    await navigateTo("/profile");
   } catch (err) {
     const fetchError = err as { data?: ApiErrorPayload; statusMessage?: string };
     errorMessage.value = fetchError.data?.error || fetchError.statusMessage || "Sign in failed";

@@ -80,6 +80,7 @@ declare global {
   const reactive: typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue').reactive
   const readonly: typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue').readonly
   const ref: typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue').ref
+  const refreshAuthUser: typeof import('../../app/composables/useAuthUser').refreshAuthUser
   const refreshCookie: typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/cookie').refreshCookie
   const refreshNuxtData: typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/asyncData').refreshNuxtData
   const reloadNuxtApp: typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/chunk').reloadNuxtApp
@@ -104,6 +105,7 @@ declare global {
   const useAppConfig: typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/config').useAppConfig
   const useAsyncData: typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/asyncData').useAsyncData
   const useAttrs: typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue').useAttrs
+  const useAuthUser: typeof import('../../app/composables/useAuthUser').useAuthUser
   const useColorMode: typeof import('../../../../node_modules/.pnpm/@nuxtjs+color-mode@4.0.1_magicast@0.5.3/node_modules/@nuxtjs/color-mode/dist/runtime/composables').useColorMode
   const useContentSearch: typeof import('../../../../node_modules/.pnpm/@nuxt+ui@4.9.0_@tiptap+extensions@3.27.1_@tiptap+core@3.27.1_@tiptap+pm@3.27.1__@tiptap_c0a505ed2ff6385806f78b945e041226/node_modules/@nuxt/ui/dist/runtime/composables/useContentSearch').useContentSearch
   const useCookie: typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/cookie').useCookie
@@ -300,6 +302,7 @@ declare module 'vue' {
     readonly reactive: UnwrapRef<typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue')['ref']>
+    readonly refreshAuthUser: UnwrapRef<typeof import('../../app/composables/useAuthUser')['refreshAuthUser']>
     readonly refreshCookie: UnwrapRef<typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/cookie')['refreshCookie']>
     readonly refreshNuxtData: UnwrapRef<typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/asyncData')['refreshNuxtData']>
     readonly reloadNuxtApp: UnwrapRef<typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/chunk')['reloadNuxtApp']>
@@ -324,6 +327,7 @@ declare module 'vue' {
     readonly useAppConfig: UnwrapRef<typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/config')['useAppConfig']>
     readonly useAsyncData: UnwrapRef<typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/asyncData')['useAsyncData']>
     readonly useAttrs: UnwrapRef<typeof import('../../../../node_modules/.pnpm/vue@3.5.39_typescript@5.9.3/node_modules/vue')['useAttrs']>
+    readonly useAuthUser: UnwrapRef<typeof import('../../app/composables/useAuthUser')['useAuthUser']>
     readonly useColorMode: UnwrapRef<typeof import('../../../../node_modules/.pnpm/@nuxtjs+color-mode@4.0.1_magicast@0.5.3/node_modules/@nuxtjs/color-mode/dist/runtime/composables')['useColorMode']>
     readonly useContentSearch: UnwrapRef<typeof import('../../../../node_modules/.pnpm/@nuxt+ui@4.9.0_@tiptap+extensions@3.27.1_@tiptap+core@3.27.1_@tiptap+pm@3.27.1__@tiptap_c0a505ed2ff6385806f78b945e041226/node_modules/@nuxt/ui/dist/runtime/composables/useContentSearch')['useContentSearch']>
     readonly useCookie: UnwrapRef<typeof import('../../../../node_modules/.pnpm/nuxt@4.4.8_@babel+plugin-syntax-jsx@7.29.7_@babel+core@7.29.7__@babel+plugin-syntax-typ_838dcf69ee488faec2e1206e10ed0e53/node_modules/nuxt/dist/app/composables/cookie')['useCookie']>

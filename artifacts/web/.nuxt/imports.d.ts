@@ -31,6 +31,7 @@ export { requestIdleCallback, cancelIdleCallback } from '#app/compat/idle-callba
 export { setInterval } from '#app/compat/interval';
 export { definePageMeta, PageMeta } from '#app/composables/pages';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
+export { useAuthUser, refreshAuthUser } from '../app/composables/useAuthUser';
 export { useSupabaseClient } from '../app/utils/supabase-client';
 export { defineLocale, extendLocale } from '../../../node_modules/.pnpm/@nuxt+ui@4.9.0_@tiptap+extensions@3.27.1_@tiptap+core@3.27.1_@tiptap+pm@3.27.1__@tiptap_c0a505ed2ff6385806f78b945e041226/node_modules/@nuxt/ui/dist/runtime/composables/defineLocale';
 export { defineShortcuts, extractShortcuts } from '../../../node_modules/.pnpm/@nuxt+ui@4.9.0_@tiptap+extensions@3.27.1_@tiptap+core@3.27.1_@tiptap+pm@3.27.1__@tiptap_c0a505ed2ff6385806f78b945e041226/node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts';

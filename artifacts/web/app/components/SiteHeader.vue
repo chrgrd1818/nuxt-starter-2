@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import type { AppUser } from "../types";
 import { getTexts } from "../utils/locales/texts";
 
 const config = useRuntimeConfig();
 const texts = getTexts(config.public.lang);
 const appConfig = useAppConfig();
 
-const { data, refresh } = await useFetch<{ user: AppUser | null }>("/auth/me");
+const { data } = await useAuthUser();
 
 const isSignedIn = computed(() => Boolean(data.value?.user));
 
 async function handleSignOut(): Promise<void> {
   await $fetch("/auth/sign-out", { method: "POST" });
-  await refresh();
+  await refreshAuthUser();
   await navigateTo("/auth/sign-in");
 }
 </script>
@@ -25,6 +24,9 @@ async function handleSignOut(): Promise<void> {
 
     <nav class="flex items-center gap-3">
       <template v-if="isSignedIn">
+        <span v-if="data?.user?.displayName" class="text-sm text-muted">
+          {{ data.user.displayName }}
+        </span>
         <UButton variant="ghost" :label="texts.nav.profile" to="/profile" />
         <UButton variant="ghost" :label="texts.nav.signOut" @click="handleSignOut" />
       </template>

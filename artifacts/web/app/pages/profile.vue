@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { AppUser } from "../types";
 import { getTexts } from "../utils/locales/texts";
 
 const config = useRuntimeConfig();
 const texts = getTexts(config.public.lang);
 
-const { data } = await useFetch<{ user: AppUser | null }>("/auth/me");
+const { data } = await useAuthUser();
 
 const memberSince = computed(() => {
   if (!data.value?.user) {

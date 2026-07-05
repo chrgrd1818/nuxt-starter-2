@@ -27,7 +27,8 @@ onMounted(async () => {
   status.value = error ? "error" : "success";
 
   if (!error) {
-    await navigateTo("/profile", { external: true });
+    await refreshAuthUser();
+    await navigateTo("/profile");
   }
 });
 </script>
