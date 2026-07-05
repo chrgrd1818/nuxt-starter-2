@@ -4,10 +4,12 @@ import type { SupportedLocale } from "../../types";
 
 export interface LocaleTexts {
   nav: {
+    home: string;
     signIn: string;
     signUp: string;
     signOut: string;
     profile: string;
+    openMenu: string;
   };
   home: {
     welcomeBack: string;

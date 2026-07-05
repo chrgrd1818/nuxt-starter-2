@@ -1,9 +1,11 @@
 {
   "nav": {
+    "home": "Home",
     "signIn": "Sign in",
     "signUp": "Sign up",
     "signOut": "Sign out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "openMenu": "Open menu"
   },
   "home": {
     "welcomeBack": "Welcome back",

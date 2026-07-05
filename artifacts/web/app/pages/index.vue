@@ -15,7 +15,7 @@ const heading = computed(() =>
   <div class="mx-auto max-w-2xl px-6 py-16 text-center">
     <h1 class="font-display text-3xl font-semibold">{{ heading }}</h1>
     <p v-if="data?.user" class="mt-2 text-muted">
-      {{ texts.home.signedInAs }} {{ data.user.displayName || data.user.email }}
+      {{ texts.home.signedInAs }} {{ data.user.displayName }}
     </p>
   </div>
 </template>
