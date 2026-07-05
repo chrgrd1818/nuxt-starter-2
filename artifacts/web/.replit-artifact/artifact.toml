@@ -1,0 +1,38 @@
+kind = "web"
+previewPath = "/"
+title = "Nuxt Starter"
+version = "1.0.0"
+id = "artifacts/web"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22333
+
+[services.env]
+PORT = "22333"
+NUXT_TELEMETRY_DISABLED = "1"
+
+[services.development]
+run = "pnpm --filter @workspace/web run dev"
+
+[services.production]
+
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/web", "run", "build"]
+
+[services.production.build.env]
+NODE_ENV = "production"
+
+[services.production.run]
+args = ["node", "artifacts/web/.output/server/index.mjs"]
+
+[services.production.run.env]
+PORT = "22333"
+NODE_ENV = "production"
+NUXT_TELEMETRY_DISABLED = "1"

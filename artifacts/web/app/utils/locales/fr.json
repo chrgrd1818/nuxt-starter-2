@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "signOut": "Se déconnecter"
+  },
+  "home": {
+    "welcomeBack": "Bon retour",
+    "welcomeGuest": "Bienvenue",
+    "signedInAs": "Connecté en tant que"
+  },
+  "auth": {
+    "signInTitle": "Connectez-vous à votre compte",
+    "signUpTitle": "Créer un compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "signInAction": "Se connecter",
+    "signUpAction": "Créer un compte",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "confirmTitle": "Confirmation de votre compte",
+    "confirmSuccess": "Votre compte est confirmé. Vous pouvez maintenant vous connecter.",
+    "confirmError": "Nous n'avons pas pu confirmer votre compte. Le lien a peut-être expiré."
+  }
+}

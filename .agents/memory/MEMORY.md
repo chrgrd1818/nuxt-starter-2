@@ -1,0 +1,1 @@
+- [Bootstrapping Nuxt as a Replit artifact](nuxt-artifact-bootstrap.md) — Nuxt isn't a native artifactType; workaround + SSR service config + routing gotchas.

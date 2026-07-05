@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "signOut": "Sign out"
+  },
+  "home": {
+    "welcomeBack": "Welcome back",
+    "welcomeGuest": "Welcome",
+    "signedInAs": "Signed in as"
+  },
+  "auth": {
+    "signInTitle": "Sign in to your account",
+    "signUpTitle": "Create an account",
+    "email": "Email",
+    "password": "Password",
+    "signInAction": "Sign in",
+    "signUpAction": "Create account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "confirmTitle": "Confirming your account",
+    "confirmSuccess": "Your account is confirmed. You can sign in now.",
+    "confirmError": "We couldn't confirm your account. The link may have expired."
+  }
+}
