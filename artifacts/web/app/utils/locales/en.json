@@ -2,7 +2,8 @@
   "nav": {
     "signIn": "Sign in",
     "signUp": "Sign up",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "profile": "Profile"
   },
   "home": {
     "welcomeBack": "Welcome back",
@@ -21,5 +22,13 @@
     "confirmTitle": "Confirming your account",
     "confirmSuccess": "Your account is confirmed. You can sign in now.",
     "confirmError": "We couldn't confirm your account. The link may have expired."
+  },
+  "profile": {
+    "title": "Your profile",
+    "email": "Email",
+    "memberSince": "Member since",
+    "newPassword": "New password",
+    "updatePassword": "Update password",
+    "passwordUpdated": "Your password has been updated."
   }
 }

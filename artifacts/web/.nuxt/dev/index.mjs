@@ -626,9 +626,17 @@ const cachedEventHandler = defineCachedEventHandler;
 const defineAppConfig = (config) => config;
 
 const appConfig0 = defineAppConfig({
+  appName: "GameQuiz",
+  appVersion: "1.0.0",
+  defaultLocale: "en",
+  supportedLocales: ["en", "fr"],
   ui: {
     colors: {
-      primary: "blue",
+      primary: "pink",
+      secondary: "cyan",
+      success: "green",
+      warning: "amber",
+      info: "purple",
       neutral: "slate"
     }
   }

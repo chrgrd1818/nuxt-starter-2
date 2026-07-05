@@ -7,6 +7,7 @@ export interface LocaleTexts {
     signIn: string;
     signUp: string;
     signOut: string;
+    profile: string;
   };
   home: {
     welcomeBack: string;
@@ -25,6 +26,14 @@ export interface LocaleTexts {
     confirmTitle: string;
     confirmSuccess: string;
     confirmError: string;
+  };
+  profile: {
+    title: string;
+    email: string;
+    memberSince: string;
+    newPassword: string;
+    updatePassword: string;
+    passwordUpdated: string;
   };
 }
 

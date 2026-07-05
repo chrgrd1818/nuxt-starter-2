@@ -2,7 +2,8 @@
   "nav": {
     "signIn": "Se connecter",
     "signUp": "S'inscrire",
-    "signOut": "Se déconnecter"
+    "signOut": "Se déconnecter",
+    "profile": "Profil"
   },
   "home": {
     "welcomeBack": "Bon retour",
@@ -21,5 +22,13 @@
     "confirmTitle": "Confirmation de votre compte",
     "confirmSuccess": "Votre compte est confirmé. Vous pouvez maintenant vous connecter.",
     "confirmError": "Nous n'avons pas pu confirmer votre compte. Le lien a peut-être expiré."
+  },
+  "profile": {
+    "title": "Votre profil",
+    "email": "E-mail",
+    "memberSince": "Membre depuis",
+    "newPassword": "Nouveau mot de passe",
+    "updatePassword": "Mettre à jour le mot de passe",
+    "passwordUpdated": "Votre mot de passe a été mis à jour."
   }
 }
