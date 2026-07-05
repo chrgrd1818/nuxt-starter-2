@@ -11,6 +11,7 @@ export default defineEventHandler((event): { user: AppUser | null } => {
     id: user.id,
     email: user.email,
     createdAt: user.created_at,
+    displayName: (user.user_metadata?.display_name as string | undefined) ?? null,
   };
 
   return { user: appUser };

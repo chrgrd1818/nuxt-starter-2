@@ -30,7 +30,6 @@ async function handleSignOut(): Promise<void> {
       </template>
       <template v-else>
         <UButton variant="ghost" :label="texts.nav.signIn" to="/auth/sign-in" />
-        <UButton :label="texts.nav.signUp" to="/auth/sign-up" />
       </template>
     </nav>
   </header>

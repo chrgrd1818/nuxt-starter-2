@@ -23,17 +23,16 @@ export interface LocaleTexts {
     signUpAction: string;
     noAccount: string;
     haveAccount: string;
+    displayName: string;
     confirmTitle: string;
     confirmSuccess: string;
     confirmError: string;
   };
   profile: {
     title: string;
+    displayName: string;
     email: string;
     memberSince: string;
-    newPassword: string;
-    updatePassword: string;
-    passwordUpdated: string;
   };
 }
 

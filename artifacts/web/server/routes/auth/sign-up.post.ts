@@ -16,6 +16,7 @@ export default defineEventHandler(async (event): Promise<AuthResponse> => {
   const { data, error } = await supabase.auth.signUp({
     email: body.email,
     password: body.password,
+    options: body.displayName ? { data: { display_name: body.displayName } } : undefined,
   });
 
   if (error || !data.user || !data.user.email) {
@@ -30,6 +31,7 @@ export default defineEventHandler(async (event): Promise<AuthResponse> => {
       id: data.user.id,
       email: data.user.email,
       createdAt: data.user.created_at,
+      displayName: (data.user.user_metadata?.display_name as string | undefined) ?? null,
     },
   };
 });

@@ -632,8 +632,8 @@ const appConfig0 = defineAppConfig({
   supportedLocales: ["en", "fr"],
   ui: {
     colors: {
-      primary: "pink",
-      secondary: "cyan",
+      primary: "cyan",
+      secondary: "pink",
       success: "green",
       warning: "amber",
       info: "purple",
@@ -3332,6 +3332,7 @@ const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const me_get = defineEventHandler((event) => {
+  var _a, _b;
   const user = event.context.user;
   if (!user || !user.email) {
     return { user: null };
@@ -3339,7 +3340,8 @@ const me_get = defineEventHandler((event) => {
   const appUser = {
     id: user.id,
     email: user.email,
-    createdAt: user.created_at
+    createdAt: user.created_at,
+    displayName: (_b = (_a = user.user_metadata) == null ? void 0 : _a.display_name) != null ? _b : null
   };
   return { user: appUser };
 });
@@ -3350,6 +3352,7 @@ const me_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const signIn_post = defineEventHandler(async (event) => {
+  var _a, _b;
   const body = await readBody(event);
   if (!(body == null ? void 0 : body.email) || !(body == null ? void 0 : body.password)) {
     throw createError({
@@ -3372,7 +3375,8 @@ const signIn_post = defineEventHandler(async (event) => {
     user: {
       id: data.user.id,
       email: data.user.email,
-      createdAt: data.user.created_at
+      createdAt: data.user.created_at,
+      displayName: (_b = (_a = data.user.user_metadata) == null ? void 0 : _a.display_name) != null ? _b : null
     }
   };
 });
@@ -3394,6 +3398,7 @@ const signOut_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProp
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const signUp_post = defineEventHandler(async (event) => {
+  var _a, _b;
   const body = await readBody(event);
   if (!(body == null ? void 0 : body.email) || !(body == null ? void 0 : body.password)) {
     throw createError({
@@ -3404,7 +3409,8 @@ const signUp_post = defineEventHandler(async (event) => {
   const supabase = getSupabaseServerClient(event);
   const { data, error } = await supabase.auth.signUp({
     email: body.email,
-    password: body.password
+    password: body.password,
+    options: body.displayName ? { data: { display_name: body.displayName } } : void 0
   });
   if (error || !data.user || !data.user.email) {
     throw createError({
@@ -3416,7 +3422,8 @@ const signUp_post = defineEventHandler(async (event) => {
     user: {
       id: data.user.id,
       email: data.user.email,
-      createdAt: data.user.created_at
+      createdAt: data.user.created_at,
+      displayName: (_b = (_a = data.user.user_metadata) == null ? void 0 : _a.display_name) != null ? _b : null
     }
   };
 });

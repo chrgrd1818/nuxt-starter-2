@@ -25,6 +25,10 @@ onMounted(async () => {
   });
 
   status.value = error ? "error" : "success";
+
+  if (!error) {
+    await navigateTo("/profile", { external: true });
+  }
 });
 </script>
 

@@ -5,8 +5,8 @@ export default defineAppConfig({
   supportedLocales: ["en", "fr"],
   ui: {
     colors: {
-      primary: "pink",
-      secondary: "cyan",
+      primary: "cyan",
+      secondary: "pink",
       success: "green",
       warning: "amber",
       info: "purple",

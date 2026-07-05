@@ -30,6 +30,7 @@ export default defineEventHandler(async (event): Promise<AuthResponse> => {
       id: data.user.id,
       email: data.user.email,
       createdAt: data.user.created_at,
+      displayName: (data.user.user_metadata?.display_name as string | undefined) ?? null,
     },
   };
 });
