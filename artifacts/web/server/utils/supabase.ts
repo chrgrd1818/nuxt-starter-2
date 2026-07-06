@@ -1,5 +1,5 @@
 import { createServerClient, parseCookieHeader, serializeCookieHeader } from "@supabase/ssr";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import type { H3Event } from "h3";
 
 export function getSupabaseServerClient(event: H3Event): SupabaseClient {
@@ -25,23 +25,4 @@ export function getSupabaseServerClient(event: H3Event): SupabaseClient {
       },
     },
   });
-}
-
-let adminClient: SupabaseClient | null = null;
-
-export function getSupabaseAdminClient(event: H3Event): SupabaseClient {
-  if (adminClient) {
-    return adminClient;
-  }
-
-  const config = useRuntimeConfig(event);
-
-  adminClient = createClient(config.public.supabaseUrl, config.supabaseServiceRoleKey, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  });
-
-  return adminClient;
 }
