@@ -11,7 +11,19 @@ const password = ref("");
 const errorMessage = ref<string | null>(null);
 const isSubmitting = ref(false);
 
+const isFormValid = computed(() => 
+  displayName.value.trim().length > 0 &&
+  email.value.trim().length > 0 &&
+  password.value.length > 0
+);
+
 async function handleSubmit(): Promise<void> {
+  // Validate form before submission
+  if (!isFormValid.value) {
+    errorMessage.value = "All fields are required";
+    return;
+  }
+
   errorMessage.value = null;
   isSubmitting.value = true;
 
@@ -55,7 +67,7 @@ async function handleSubmit(): Promise<void> {
 
       <p v-if="errorMessage" class="text-sm text-error">{{ errorMessage }}</p>
 
-      <UButton type="submit" block :loading="isSubmitting" :label="texts.auth.signUpAction" />
+      <UButton type="submit" block :loading="isSubmitting" :disabled="!isFormValid" :label="texts.auth.signUpAction" />
     </form>
 
     <p class="mt-4 text-sm text-muted">

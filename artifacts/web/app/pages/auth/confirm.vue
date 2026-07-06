@@ -8,6 +8,13 @@ const route = useRoute();
 
 const status = ref<"pending" | "success" | "error">("pending");
 
+const validOtpTypes = ["email", "signup", "recovery", "invite", "email_change"] as const;
+type ValidOtpType = (typeof validOtpTypes)[number];
+
+function isValidOtpType(value: string): value is ValidOtpType {
+  return validOtpTypes.includes(value as ValidOtpType);
+}
+
 onMounted(async () => {
   const tokenHash = route.query.token_hash;
   const type = route.query.type;
@@ -17,11 +24,16 @@ onMounted(async () => {
     return;
   }
 
+  if (!isValidOtpType(type)) {
+    status.value = "error";
+    return;
+  }
+
   const supabase = useSupabaseClient();
 
   const { error } = await supabase.auth.verifyOtp({
     token_hash: tokenHash,
-    type: type as "email" | "signup" | "recovery" | "invite" | "email_change",
+    type,
   });
 
   status.value = error ? "error" : "success";

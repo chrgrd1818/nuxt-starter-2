@@ -5,10 +5,8 @@ export default defineEventHandler(async (event): Promise<AuthResponse> => {
   const body = await readBody<AuthCredentials>(event);
 
   if (!body?.email || !body?.password) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: "Email and password are required",
-    });
+    setResponseStatus(event, 400);
+    return { error: "Email and password are required" };
   }
 
   const supabase = getSupabaseServerClient(event);
@@ -20,10 +18,8 @@ export default defineEventHandler(async (event): Promise<AuthResponse> => {
   });
 
   if (error || !data.user || !data.user.email) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: error?.message || "Could not create account",
-    });
+    setResponseStatus(event, 400);
+    return { error: error?.message || "Could not create account" };
   }
 
   return {
