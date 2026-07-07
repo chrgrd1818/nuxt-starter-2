@@ -47,3 +47,19 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+.agents/
+.replitignore
+
+# Nuxt / Next / build artifacts
+.nuxt/
+.output/
+dist/
+
+# Canvas / mockup sandbox (separate design artifact)
+artifacts/mockup-sandbox/
+
+# Generated files
+.generated/
+
+# Pnpm lock should NOT be ignored — it ensures reproducible installs
+# pnpm-lock.yaml
