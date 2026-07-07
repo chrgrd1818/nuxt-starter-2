@@ -1,65 +1,14 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# ============================================================================
+# ROOT .gitignore — only artifacts/web/ is tracked
+# ============================================================================
 
-# compiled output
-dist
-tmp
-out-tsc
-*.tsbuildinfo
-.expo
-.expo-shared
+# Ignore everything by default
+*
 
-# dependencies
-node_modules
+# Re-allow root .gitignore itself
+!.gitignore
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
-
-# Replit
-.cache/
-.local/
-.agents/
-.replitignore
-
-# Nuxt / Next / build artifacts
-.nuxt/
-.output/
-dist/
-
-# Canvas / mockup sandbox (separate design artifact)
-artifacts/mockup-sandbox/
-
-# Generated files
-.generated/
-
-# Pnpm lock should NOT be ignored — it ensures reproducible installs
-# pnpm-lock.yaml
+# Re-allow the artifacts directory path so web app files are reachable
+!artifacts/
+!artifacts/web/
+!artifacts/web/**/*
