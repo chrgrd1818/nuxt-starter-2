@@ -2331,7 +2331,22 @@ ___21luymMyOuaQRTAwM19FDuiqDMESqLg5pFQtyaCco,
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1e605-a1fIo8fTyKjN8Y303vxfgvesxLc\"",
+    "mtime": "2026-07-07T02:52:48.379Z",
+    "size": 124421,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"74c8f-0Fke3HwHMS1C3v3t7VFXxEL//l8\"",
+    "mtime": "2026-07-07T02:52:48.379Z",
+    "size": 478351,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -3355,10 +3370,8 @@ const signIn_post = defineEventHandler(async (event) => {
   var _a, _b;
   const body = await readBody(event);
   if (!(body == null ? void 0 : body.email) || !(body == null ? void 0 : body.password)) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: "Email and password are required"
-    });
+    setResponseStatus(event, 400);
+    return { error: "Email and password are required" };
   }
   const supabase = getSupabaseServerClient(event);
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -3366,10 +3379,8 @@ const signIn_post = defineEventHandler(async (event) => {
     password: body.password
   });
   if (error || !data.user || !data.user.email) {
-    throw createError({
-      statusCode: 401,
-      statusMessage: (error == null ? void 0 : error.message) || "Invalid credentials"
-    });
+    setResponseStatus(event, 401);
+    return { error: (error == null ? void 0 : error.message) || "Invalid credentials" };
   }
   return {
     user: {
@@ -3401,10 +3412,8 @@ const signUp_post = defineEventHandler(async (event) => {
   var _a, _b;
   const body = await readBody(event);
   if (!(body == null ? void 0 : body.email) || !(body == null ? void 0 : body.password)) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: "Email and password are required"
-    });
+    setResponseStatus(event, 400);
+    return { error: "Email and password are required" };
   }
   const supabase = getSupabaseServerClient(event);
   const { data, error } = await supabase.auth.signUp({
@@ -3413,10 +3422,8 @@ const signUp_post = defineEventHandler(async (event) => {
     options: body.displayName ? { data: { display_name: body.displayName } } : void 0
   });
   if (error || !data.user || !data.user.email) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: (error == null ? void 0 : error.message) || "Could not create account"
-    });
+    setResponseStatus(event, 400);
+    return { error: (error == null ? void 0 : error.message) || "Could not create account" };
   }
   return {
     user: {
